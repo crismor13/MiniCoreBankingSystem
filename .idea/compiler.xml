@@ -7,11 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ledger" />
         <module name="notification" />
-        <module name="loan" />
         <module name="fraud" />
-        <module name="websocket" />
         <module name="api-gateway" />
         <module name="eureka-server" />
         <module name="transaction" />
@@ -19,8 +16,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ledger" target="19" />
+      <module name="loan" target="19" />
       <module name="user" target="19" />
       <module name="useraccount" target="19" />
+      <module name="websocket" target="19" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
