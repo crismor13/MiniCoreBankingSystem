@@ -1,0 +1,40 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 9191
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        -   id: AUTHENTICATION-SERVICE
+            predicates:
+              - Path=/auth/**
+            uri: lb://AUTHENTICATION-SERVICE
+        -   id: TRANSACTION-SERVICE
+            predicates:
+              - Path=/transactions
+            uri: lb://TRANSACTION-SERVICE/transactions
+            filters:
+              - AuthFilter
+        - id: NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notifications/**
+          uri: lb://NOTIFICATION-SERVICE/notifications
+          filters:
+            - AuthFilter
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "http://localhost:3001/"
+#            allowedMethods:
+#              - GET
+#              - POST

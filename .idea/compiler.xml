@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ledger" />
+        <module name="notification" />
+        <module name="loan" />
+        <module name="fraud" />
+        <module name="websocket" />
+        <module name="api-gateway" />
+        <module name="eureka-server" />
+        <module name="transaction" />
+        <module name="authentication" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="user" target="19" />
+      <module name="useraccount" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="authentication" options="-parameters" />
+      <module name="corebanking" options="" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="fraud" options="-parameters" />
+      <module name="ledger" options="-parameters" />
+      <module name="loan" options="-parameters" />
+      <module name="notification" options="-parameters" />
+      <module name="transaction" options="-parameters" />
+      <module name="user" options="-parameters" />
+      <module name="useraccount" options="-parameters" />
+      <module name="websocket" options="-parameters" />
+    </option>
+  </component>
+</project>
